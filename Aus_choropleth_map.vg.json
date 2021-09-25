@@ -28,7 +28,7 @@
             "scale":{"domain":[1400,2000]}
         },
         "tooltip":[
-            {"field":"properties.STE_NAME16","type": "nominal","title":"STE_NAME16"},
+            {"field":"properties.STE_NAME16","type": "nominal","title":"State"},
             {"field":"Persons","type": "quantitative"}
         ]
     
