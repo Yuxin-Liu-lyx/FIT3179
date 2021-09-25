@@ -25,7 +25,7 @@
         "color":{
             "field":"Persons",
             "type": "quantitative",
-            "scale":{"domain":[1000,2000]}
+            "scale":{"domain":[1400,2000]}
         },
         "tooltip":[
             {"field":"properties.STE_NAME16","type": "nominal","title":"STE_NAME16"},
