@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/covid.PNG">
+
+    <title>Average weekly income in Australia</title>
+
+    <!-- The style sheet applied to this document. -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+        integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <script src="vega_lite_vis.js"></script>
+</head>
+
+<body>
+    <center>
+        <h1 style="font-size: 50px">Average weekly income in Australia</h1>
+        <p style="text-align: center"><i>This is a dashboard of average weekly income in Australia. Designed by Yuxin Liu.</i></p>
+        <br>
+        <br>
+    </center>
+    <br>
+
+    <div class="pure-g">
+
+
+        <div class="pure-u-1">
+            <p style="font-size:20px; text-align: center; margin-top:5%;">
+                <b>Per capita income by state in Australia</b>
+            </p>
+        </div>
+
+        <div class="pure-u-1-5">
+            <div id="vis1"  class="vis-container"></div>
+            <p style="padding-top:20%;margin-left: 30%; font-size:17px">
+                On the right is a map of Australia, with the shades of colour representing the amount of 
+                regional income, from light green to dark blue meaning the weekly average per capita income ranges from less to more. 
+                Hover over the different state maps to see more detailed information.
+                <br><br>
+                This map shows that the Australian Capital Territory is the darkest, 
+                followed by Western Australia. This indicates that the ACT is the region with the 
+                highest weekly income per capita and WA is the region with the second highest weekly income per capita in Australia.
+            </p>
+        </div>
+
+        <div class="pure-u-4-5">
+            <div id="vis2" style="margin-top: 0%; margin-right:0%; padding-left: 3%"></div>
+          </div>
+    
+          <div class="pure-u-1" style= "margin-top: 7%;">
+              <p style="margin-left: 5%; font-weight:bold; font-size:20px;">
+                Average weekly earnings by industry
+              </p>
+          </div>
+    
+          <div class="pure-u-1-4" style="margin-left: 12%; margin-right:4%; ">
+            <div id="vis3" style="margin-left: 0%; padding-top: 10%;"></div>
+          </div>
+    
+    
+          <div class="pure-u-1-2" style="margin-left:3%">
+              <div id='text_div'>
+                  <p style="font-size: 20px; margin-left: 20%; margin-top: 4%;">
+                    This bubble chart shows the average weekly earnings of men and women in different industries. 
+                    The chart divides the 18 industries into four categories, with the categories differentiated by four colours.
+                    <br><br>
+                    The highest paying industry is mining, where the average weekly earnings for both men and women are much higher than the other industries, with men earning an average of $2748.7 and women $2276.8.
+                </p>
+
+              </div>
+          </div>
+
+          <div class="pure-u-1">
+            <p style="margin-left: 5%; font-weight:bold; font-size:20px; margin-top: 5%; text-align:center;padding-left:42%">
+                Average weekly revenue with public and private
+            </p>
+        </div>
+
+        <div class="pure-u-1-2">
+            <div id='text_div'>
+                <p style="font-size: 20px; margin-left: 10%; padding-top: 0%; padding-right: 10%">
+                    This box plot shows the income of the public and private sectors for men women and per capita respectively. 
+                    Blue represents public and orange represents private, 
+                    and by placing the mouse over the colour blocks you can see the highest, 
+                    lowest and median values of the data. 
+                    <br><br>
+                    The graph reflects the fact that men have the highest income levels in the public sector 
+                    and women have the lowest income levels in the private sector, 
+                    which reflects, 
+                    in turn, the fact that women generally earn less than men. 
+                </p>
+            </div>
+        </div>
+
+        <!-- end pure grid group -->
+
+  </div> <!-- end page -->
+   
+  <script type="text/javascript">
+    var specVis1 = "Aus_choropleth_map.vg.json";
+    var specVis2= "industry.vg.json";
+    var specVis3 = "boxplot-revenue.vg.json";
+  
+  
+  
+    vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    
+     vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  
+    vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  
+  
+  
+  </script>
+  </body>
+  </html>
+
